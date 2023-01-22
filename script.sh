@@ -5,6 +5,7 @@ echo 'deb [ signed-by=/usr/share/keyrings/packages.microsoft.gpg ] https://packa
         | sudo tee /etc/apt/sources.list.d/vscode.list
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash
 sudo apt install -y nano nodejs code
+mkdir -p ~/.local/lib
 npm config set prefix '~/.local/'
 
 if ! grep -R 'export PATH=~/.local/bin/:$PATH' ~/.bashrc > /dev/null; then
