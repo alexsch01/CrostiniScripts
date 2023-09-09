@@ -1,11 +1,5 @@
-if ! grep -R "net.ipv6.conf.all.disable_ipv6=1" /etc/sysctl.conf > /dev/null; then
-        echo "net.ipv6.conf.all.disable_ipv6=1" | sudo tee -a "/etc/sysctl.conf"
-fi
-
-if ! grep -R "net.ipv6.conf.default.disable_ipv6=1" /etc/sysctl.conf > /dev/null; then
-        echo "net.ipv6.conf.default.disable_ipv6=1" | sudo tee -a "/etc/sysctl.conf"
-fi
-
+echo "net.ipv6.conf.all.disable_ipv6=1" | sudo tee -a "/etc/sysctl.conf"
+echo "net.ipv6.conf.default.disable_ipv6=1" | sudo tee -a "/etc/sysctl.conf"
 sudo sysctl -p > /dev/null
 
 sudo mkdir -p /etc/apt/keyrings
@@ -21,10 +15,7 @@ sudo apt install nano nodejs code -y
 sudo apt purge vim --auto-remove -y
 mkdir -p ~/.local/lib
 npm config set prefix '~/.local/'
-
-if ! grep -R 'export PATH=~/.local/bin/:$PATH' ~/.bashrc > /dev/null; then
-        echo 'export PATH=~/.local/bin/:$PATH' >> ~/.bashrc
-fi
+echo 'export PATH=~/.local/bin/:$PATH' >> ~/.bashrc
 
 sed -i "s/#alias ll='ls -l'/alias ll='ls -l'/" ~/.bashrc
 source ~/.bashrc
