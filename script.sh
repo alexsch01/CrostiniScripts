@@ -1,10 +1,5 @@
-if ! grep -R 'sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1' ~/.bashrc > /dev/null; then
-        echo 'sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1' >> ~/.bashrc
-fi
-
-if ! grep -R 'sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1' ~/.bashrc > /dev/null; then
-        echo 'sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1' >> ~/.bashrc
-fi
+sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
