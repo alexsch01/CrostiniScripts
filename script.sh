@@ -9,6 +9,9 @@ echo 'deb [ signed-by=/usr/share/keyrings/packages.microsoft.gpg ] https://packa
 sudo apt update
 sudo apt install nano code nodejs -y
 sudo apt purge vim --auto-remove -y
+mkdir -p ~/.local/lib
+npm config set prefix '~/.local/'
+echo 'export PATH=~/.local/bin/:$PATH' >> ~/.bashrc
 
 sed -i "s/#alias ll='ls -l'/alias ll='ls -l'/" ~/.bashrc
 source ~/.bashrc
