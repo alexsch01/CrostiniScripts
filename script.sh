@@ -7,7 +7,7 @@ echo 'deb [ signed-by=/etc/apt/keyrings/packages.microsoft.gpg ] https://package
 sudo apt update
 sudo apt install nano code nodejs -y
 sudo apt purge vim --auto-remove -y
-mkdir -p ~/.local/lib
+mkdir -p ~/.local/bin ~/.local/lib
 npm config set prefix ~/.local
 
 sed -i "s/#alias ll='ls -l'/alias ll='ls -l'/" ~/.bashrc
