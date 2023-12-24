@@ -1,5 +1,5 @@
-NODE_MAJOR=20
 wget -qO - https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor | sudo dd of=/etc/apt/keyrings/nodesource.gpg
+NODE_MAJOR=20
 echo 'deb [ signed-by=/etc/apt/keyrings/nodesource.gpg ] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main' | sudo tee /etc/apt/sources.list.d/nodesource.list
 
 wget -qO - https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo dd of=/etc/apt/keyrings/packages.microsoft.gpg
