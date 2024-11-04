@@ -1,5 +1,5 @@
 wget -qO - https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor | sudo dd of=/etc/apt/keyrings/nodesource.gpg
-echo 'deb [ signed-by=/etc/apt/keyrings/nodesource.gpg ] https://deb.nodesource.com/node_20.x nodistro main' | sudo tee /etc/apt/sources.list.d/nodesource.list
+echo 'deb [ signed-by=/etc/apt/keyrings/nodesource.gpg ] https://deb.nodesource.com/node_22.x nodistro main' | sudo tee /etc/apt/sources.list.d/nodesource.list
 
 wget -qO - https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo dd of=/etc/apt/keyrings/packages.microsoft.gpg
 echo 'deb [ signed-by=/etc/apt/keyrings/packages.microsoft.gpg ] https://packages.microsoft.com/repos/code stable main' | sudo tee /etc/apt/sources.list.d/vscode.list
